@@ -60,6 +60,11 @@ doctype_js = {"Supplier" : "public/js/custom_supplier.js"}
 
 # Home Pages
 # ----------
+doc_events = {
+    "Attendance": {
+        "validate": "quantbit_sugar_hr.quantbit_sugar_hr.attendance_override.custom_validate"
+    }
+}
 
 # application home page (will override Website Settings)
 # home_page = "login"
@@ -259,6 +264,11 @@ fixtures = [
         "filters": [
             ["module", "=", "Quantbit Sugar HR"]
         ]
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["module", "=", "Quantbit Sugar HR"]
+        ]
     }
-  
 ]

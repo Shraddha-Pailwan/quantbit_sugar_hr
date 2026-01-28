@@ -6,7 +6,6 @@ from frappe.model.document import Document
 from datetime import timedelta, datetime
 
 class Retention(Document):
-	
 	@frappe.whitelist()
 	def check_dates(self):
 		if(self.to_date and self.from_date):
@@ -27,14 +26,14 @@ class Retention(Document):
 			if existing_att:
 				if existing_att == "Absent":
 					frappe.db.set_value("Attendance", {"employee": self.employee,"attendance_date": att_date, "status":"Absent"}, {
-						"status": "Present"})
+						"status": "On Retention"})
 				else:
 					frappe.throw(f"Attendance for Employee {self.employee} is already marked for date {att_date} ")
 			else:
 				attendance_doc = {
 					"doctype": "Attendance",
 					"employee": self.employee,
-					"status": "Present",
+					"status": "On Retention",	
 					"attendance_date": att_date,
 					"company": self.company,
 					"docstatus": 1  
