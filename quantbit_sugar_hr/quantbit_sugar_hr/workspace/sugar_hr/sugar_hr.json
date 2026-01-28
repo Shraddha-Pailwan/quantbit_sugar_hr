@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"5IDdFluysG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sugar HR</span>\",\"col\":12}},{\"id\":\"s2w4eJDIll\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bK5l8gBwZ_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>HR and Payroll</b></span>\",\"col\":12}},{\"id\":\"uMULs18Wcl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee Holiday\",\"col\":5}},{\"id\":\"bSgBY0wUT5\",\"type\":\"card\",\"data\":{\"card_name\":\"HR and Payroll \",\"col\":6}},{\"id\":\"1uUWuCk9Me\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bk3FaSetEZ\",\"type\":\"card\",\"data\":{\"card_name\":\"Overtime\",\"col\":4}},{\"id\":\"2ZF4_YhnjJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "content": "[{\"id\":\"5IDdFluysG\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sugar HR</span>\",\"col\":12}},{\"id\":\"s2w4eJDIll\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bSgBY0wUT5\",\"type\":\"card\",\"data\":{\"card_name\":\"HR and Payroll \",\"col\":6}},{\"id\":\"1uUWuCk9Me\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"bk3FaSetEZ\",\"type\":\"card\",\"data\":{\"card_name\":\"Overtime\",\"col\":4}},{\"id\":\"2ZF4_YhnjJ\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}},{\"id\":\"2ulo9o-SMK\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
  "creation": "2026-01-23 12:56:49.013729",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,55 +13,6 @@
  "is_hidden": 0,
  "label": "Sugar HR",
  "links": [
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "HR and Payroll ",
-   "link_count": 4,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Payroll Calculation",
-   "link_count": 0,
-   "link_to": "Payroll Calculation",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Petrol Rate",
-   "link_count": 0,
-   "link_to": "Petrol Rate",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "HR and Payroll Settings",
-   "link_count": 0,
-   "link_to": "HR and Payroll Settings",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Out Duty Form",
-   "link_count": 0,
-   "link_to": "Out Duty Form",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -139,9 +90,78 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HR and Payroll ",
+   "link_count": 6,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payroll Calculation",
+   "link_count": 0,
+   "link_to": "Payroll Calculation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Petrol Rate",
+   "link_count": 0,
+   "link_to": "Petrol Rate",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HR and Payroll Settings",
+   "link_count": 0,
+   "link_to": "HR and Payroll Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Out Duty Form",
+   "link_count": 0,
+   "link_to": "Out Duty Form",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Retention",
+   "link_count": 0,
+   "link_to": "Retention",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Holiday",
+   "link_count": 0,
+   "link_to": "Employee Holiday",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-01-27 11:24:56.923449",
+ "modified": "2026-01-28 10:45:56.760003",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Sugar HR",
@@ -152,15 +172,6 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 32.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Employee Holiday",
-   "link_to": "Employee Holiday",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Sugar HR"
 }

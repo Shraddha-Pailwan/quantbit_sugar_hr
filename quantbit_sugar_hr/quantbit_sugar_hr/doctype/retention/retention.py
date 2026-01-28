@@ -17,7 +17,6 @@ class Retention(Document):
 	def on_submit(self):
 		start_date = datetime.strptime(str(self.from_date), "%Y-%m-%d")  
 		end_date = datetime.strptime(str(self.to_date), "%Y-%m-%d")   
-
 		while start_date <= end_date:
 			att_date = start_date.date()
 			existing_att = frappe.get_value("Attendance", {
@@ -43,14 +42,12 @@ class Retention(Document):
 				frappe.get_doc(attendance_doc).insert(ignore_permissions=True)
 			start_date += timedelta(days=1)
 
-
 	@frappe.whitelist()
 	def calculate_total_days(self):
 		if self.from_date and self.to_date:
 			from_date = datetime.strptime(str(self.from_date), "%Y-%m-%d").date()
 			to_date = datetime.strptime(str(self.to_date), "%Y-%m-%d").date()
 			self.total_days = ((to_date - from_date).days)+1
-   
    
 	def on_cancel(self):
 		if(self.to_date):

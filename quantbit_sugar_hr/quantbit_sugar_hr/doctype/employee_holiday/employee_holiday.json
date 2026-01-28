@@ -8,8 +8,6 @@
  "field_order": [
   "section_break_wxsi",
   "naming_series",
-  "column_break_eaqa",
-  "column_break_kasn",
   "section_break_lxhm",
   "company",
   "column_break_ziwu",
@@ -48,7 +46,8 @@
    "in_standard_filter": 1,
    "label": "Company",
    "options": "Company",
-   "reqd": 1
+   "reqd": 1,
+   "width": "150"
   },
   {
    "fieldname": "branch",
@@ -57,7 +56,8 @@
    "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch",
-   "reqd": 1
+   "reqd": 1,
+   "width": "150"
   },
   {
    "fieldname": "posting_date",
@@ -68,15 +68,17 @@
    "fieldname": "from_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "From Date"
+   "label": "From Date",
+   "reqd": 1,
+   "width": "30"
   },
   {
    "fieldname": "to_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "To Date"
+   "label": "To Date",
+   "reqd": 1,
+   "width": "30"
   },
   {
    "fieldname": "holiday_date_details",
@@ -96,7 +98,9 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Season Type",
-   "options": "\nOn Season\nOff Season"
+   "options": "\nOn Season\nOff Season",
+   "reqd": 1,
+   "width": "50"
   },
   {
    "fieldname": "amended_from",
@@ -109,16 +113,10 @@
    "search_index": 1
   },
   {
+   "collapsible": 1,
    "fieldname": "section_break_wxsi",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_eaqa",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_kasn",
-   "fieldtype": "Column Break"
+   "fieldtype": "Section Break",
+   "label": "Naming Series"
   },
   {
    "fieldname": "section_break_lxhm",
@@ -184,7 +182,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-24 12:12:26.349169",
+ "modified": "2026-01-28 12:40:07.267132",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Employee Holiday",

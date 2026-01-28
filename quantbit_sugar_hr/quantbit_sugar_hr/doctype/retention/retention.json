@@ -8,6 +8,7 @@
  "field_order": [
   "section_break_wulb",
   "naming_series",
+  "section_break_egoa",
   "company",
   "section_break_hezx",
   "employee",
@@ -40,9 +41,9 @@
    "fieldname": "company",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Company",
-   "options": "Company"
+   "options": "Company",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_hezx",
@@ -129,13 +130,17 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "section_break_egoa",
+   "fieldtype": "Section Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-23 14:54:36.251895",
+ "modified": "2026-01-28 11:10:38.553982",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Retention",

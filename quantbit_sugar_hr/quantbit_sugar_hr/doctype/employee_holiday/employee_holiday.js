@@ -2,12 +2,9 @@
 // For license information, please see license.txt
 
 function getDayNameFromDate(input_date) {
-
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
     const d = new Date(input_date);
     const dayName = days[d.getDay()];
-
     return dayName;
 }
 frappe.ui.form.on("Employee Holiday", {
@@ -46,8 +43,8 @@ frappe.ui.form.on("Employee Holiday", {
     },
     branch: function (frm) {
         frm.call({
-            doc: frm.doc,
             method: "add_staff",
+            doc: frm.doc,
             callback: function (r) {
                 frm.refresh_field("employee_holiday_details")
             }
@@ -55,8 +52,8 @@ frappe.ui.form.on("Employee Holiday", {
     },
     company: function (frm) {
         frm.call({
-            doc: frm.doc,
             method: "add_staff",
+            doc: frm.doc,
             callback: function (r) {
                 frm.refresh_field("employee_holiday_details")
             }
@@ -65,7 +62,6 @@ frappe.ui.form.on("Employee Holiday", {
     select_all: function (frm) {
         frm.dirty()
         let child_table_field_name = "holiday_date_details";
-
         if (frm.doc[child_table_field_name] && frm.doc[child_table_field_name].length > 0) {
             let any_unchecked = frm.doc[child_table_field_name].some(row => !row.check);
             let new_check_state = any_unchecked ? 1 : 0;
