@@ -64,12 +64,12 @@
    "reqd": 1
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "season_end_date",
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Season End Date",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -79,8 +79,9 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Branch",
-   "mandatory_depends_on": "Season End Date",
    "options": "Branch",
    "reqd": 1
   },
@@ -108,7 +109,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-23 12:06:32.920263",
+ "modified": "2026-01-29 11:27:30.075784",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Season For Payroll",

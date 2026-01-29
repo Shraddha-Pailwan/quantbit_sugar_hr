@@ -29,13 +29,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "season_end_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Season End Date"
-  },
-  {
    "fieldname": "column_break_ssul",
    "fieldtype": "Column Break"
   },
@@ -69,13 +62,20 @@
    "in_standard_filter": 1,
    "label": "Total Season Days",
    "read_only": 1
+  },
+  {
+   "fieldname": "season_end_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Season End Date"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-01-23 11:52:18.032628",
+ "modified": "2026-01-29 11:21:55.068861",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Season For Payroll Details",
