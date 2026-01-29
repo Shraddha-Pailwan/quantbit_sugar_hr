@@ -53,7 +53,17 @@ class OvertimeCalculation(Document):
             ON emp.name = oed.employee_id
         LEFT JOIN `tabEmployee Payroll Details` epd
             ON epd.parent = oed.employee_id
-            AND (epd.from_date IS NULL OR epd.from_date <= %(from_date)s)
+            AND epd.from_date = (
+                SELECT from_date FROM `tabEmployee Payroll Details`
+                WHERE parent = oed.employee_id
+                ORDER BY
+                    CASE
+                        WHEN from_date <= %(from_date)s THEN 0
+                        ELSE 1
+                    END,
+                    from_date DESC
+                LIMIT 1
+            )
         WHERE oe.name IN %(overtime_ids)s
     """, {
         "overtime_ids": tuple(overtime_ids),

@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class PetrolAllowanceDesignation(Document):
+class SalaryComponentTable(Document):
 	pass

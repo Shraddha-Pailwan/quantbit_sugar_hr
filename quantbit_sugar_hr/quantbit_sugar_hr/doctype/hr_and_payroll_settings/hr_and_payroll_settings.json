@@ -7,7 +7,9 @@
  "field_order": [
   "off_season_holiday_day",
   "column_break_prns",
-  "public_holiday_list"
+  "public_holiday_list",
+  "section_break_xxpq",
+  "salary_component"
  ],
  "fields": [
   {
@@ -25,13 +27,23 @@
    "fieldtype": "Link",
    "label": "Public Holiday List",
    "options": "Holiday List"
+  },
+  {
+   "fieldname": "section_break_xxpq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "salary_component",
+   "fieldtype": "Table MultiSelect",
+   "label": "Salary Component",
+   "options": "Salary Component Table"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-01-23 11:43:25.551998",
+ "modified": "2026-01-29 14:27:58.345722",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "HR and Payroll Settings",
