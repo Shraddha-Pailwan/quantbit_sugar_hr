@@ -190,7 +190,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-27 14:13:55.118339",
+ "modified": "2026-02-02 13:14:48.042950",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Overtime Calculation",
@@ -198,6 +198,7 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

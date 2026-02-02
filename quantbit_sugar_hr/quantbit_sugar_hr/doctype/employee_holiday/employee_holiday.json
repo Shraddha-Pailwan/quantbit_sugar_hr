@@ -182,7 +182,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-28 12:40:07.267132",
+ "modified": "2026-02-02 13:13:34.370057",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Employee Holiday",
@@ -190,6 +190,7 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

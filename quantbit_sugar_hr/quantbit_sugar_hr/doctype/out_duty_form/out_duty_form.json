@@ -185,7 +185,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-28 11:08:18.569857",
+ "modified": "2026-02-02 13:14:03.864379",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Out Duty Form",
@@ -193,6 +193,7 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

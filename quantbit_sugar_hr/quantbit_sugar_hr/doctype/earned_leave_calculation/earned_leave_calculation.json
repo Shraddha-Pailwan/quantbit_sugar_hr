@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{from_date}-{to_date}",
+ "creation": "2026-02-02 13:08:23.018212",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_date",
+  "column_break_oro90",
+  "to_date",
+  "column_break_vqz5a",
+  "company",
+  "section_break_ijzad",
+  "get_details",
+  "earned_leave_calculation_details",
+  "section_break_spxci",
+  "leave_allocation_permanant",
+  "leave_allocation_seasonal"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_oro90",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "To Date"
+  },
+  {
+   "fieldname": "column_break_vqz5a",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_ijzad",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "get_details",
+   "fieldtype": "Button",
+   "label": "Get Leave Allocation Details"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "earned_leave_calculation_details",
+   "fieldtype": "Table",
+   "label": "Earned Leave Calculation Details",
+   "options": "Earned Leave Calculation Details"
+  },
+  {
+   "fieldname": "section_break_spxci",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "leave_allocation_permanant",
+   "fieldtype": "Table",
+   "label": "Leave Allocation Permanant",
+   "options": "Leave Allocation Permanant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "leave_allocation_seasonal",
+   "fieldtype": "Table",
+   "label": "Leave Allocation Seasonal",
+   "options": "Leave Allocation Seasonal",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-02 13:08:23.018212",
+ "modified_by": "Administrator",
+ "module": "Quantbit Sugar HR",
+ "name": "Earned Leave Calculation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

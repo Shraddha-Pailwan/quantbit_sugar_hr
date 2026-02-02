@@ -171,7 +171,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-02 09:57:28.739961",
+ "modified": "2026-02-02 13:12:49.265000",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Payroll Calculation",
@@ -179,6 +179,7 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

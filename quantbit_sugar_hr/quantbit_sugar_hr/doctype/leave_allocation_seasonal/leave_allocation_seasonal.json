@@ -1,0 +1,62 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-02 13:06:28.491620",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "days_from",
+  "column_break_djqie",
+  "days_to",
+  "column_break_tdjij",
+  "no_of_leaves"
+ ],
+ "fields": [
+  {
+   "fieldname": "days_from",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Days From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_djqie",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days_to",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Days To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tdjij",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_leaves",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "No of Leaves",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-02 13:06:28.491620",
+ "modified_by": "Administrator",
+ "module": "Quantbit Sugar HR",
+ "name": "Leave Allocation Seasonal",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
