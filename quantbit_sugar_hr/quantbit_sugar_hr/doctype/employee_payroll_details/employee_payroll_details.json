@@ -52,7 +52,8 @@
    "fieldtype": "Date",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "From Date"
+   "label": "From Date",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_bvhp",
@@ -307,7 +308,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-01-29 14:17:45.529575",
+ "modified": "2026-02-02 09:58:18.919367",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Employee Payroll Details",
