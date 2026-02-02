@@ -273,5 +273,12 @@ fixtures = [
         "filters": [
             ["module", "=", "Quantbit Sugar HR"]
         ]
+    },
+    {
+        "dt": "Workspace",
+        "filters": [
+            ["module", "=", "Quantbit Sugar HR"]
+        ]
     }
 ]
+
