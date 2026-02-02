@@ -18,11 +18,18 @@
   "medical_allowance",
   "hra",
   "convenience_allowance",
+  "da",
+  "night_shift_allowance",
+  "gun_allowance",
+  "weight_allowance",
   "column_break_ejax",
   "petrol_allowance",
-  "overtime_amount",
-  "bonus_amount",
-  "lta"
+  "lta",
+  "fda",
+  "leave_encashment",
+  "cashier_allowance",
+  "washing_allowance",
+  "conveyance_allowance"
  ],
  "fields": [
   {
@@ -62,16 +69,12 @@
   {
    "fieldname": "retention_days",
    "fieldtype": "Float",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Retention Days",
    "read_only": 1
   },
   {
    "fieldname": "out_duty_days",
    "fieldtype": "Float",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
    "label": "Out Duty Days",
    "read_only": 1
   },
@@ -89,21 +92,18 @@
   {
    "fieldname": "basic",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "Basic",
    "read_only": 1
   },
   {
    "fieldname": "medical_allowance",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "Medical Allowance",
    "read_only": 1
   },
   {
    "fieldname": "hra",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "HRA",
    "read_only": 1
   },
@@ -120,27 +120,7 @@
   {
    "fieldname": "petrol_allowance",
    "fieldtype": "Float",
-   "in_standard_filter": 1,
    "label": "Petrol Allowance",
-   "precision": "2",
-   "read_only": 1
-  },
-  {
-   "columns": 2,
-   "fieldname": "overtime_amount",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Overtime Amount",
-   "precision": "2",
-   "read_only": 1
-  },
-  {
-   "fieldname": "bonus_amount",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Bonus Amount",
-   "mandatory_depends_on": "Overtime Amount",
    "precision": "2",
    "read_only": 1
   },
@@ -149,13 +129,67 @@
    "fieldtype": "Float",
    "label": "LTA",
    "read_only": 1
+  },
+  {
+   "fieldname": "da",
+   "fieldtype": "Float",
+   "label": "DA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "night_shift_allowance",
+   "fieldtype": "Float",
+   "label": "Night Shift Allowance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gun_allowance",
+   "fieldtype": "Float",
+   "label": "Gun Allowance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight_allowance",
+   "fieldtype": "Float",
+   "label": "Weight Allowance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fda",
+   "fieldtype": "Float",
+   "label": "FDA",
+   "read_only": 1
+  },
+  {
+   "fieldname": "leave_encashment",
+   "fieldtype": "Float",
+   "label": "Leave Encashment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cashier_allowance",
+   "fieldtype": "Float",
+   "label": "Cashier Allowance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "washing_allowance",
+   "fieldtype": "Float",
+   "label": "Washing Allowance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "conveyance_allowance",
+   "fieldtype": "Float",
+   "label": "Conveyance Allowance",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-01-23 12:30:33.410795",
+ "modified": "2026-02-02 10:46:12.450350",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "Payroll Calculation Details",
