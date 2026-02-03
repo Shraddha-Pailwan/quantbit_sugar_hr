@@ -1,5 +1,5 @@
-# # Copyright (c) 2026, Quantbit Technologies and contributors
-# # For license information, please see license.txt
+# Copyright (c) 2026, Quantbit Technologies and contributors
+# For license information, please see license.txt
 
 import frappe
 from frappe.model.document import Document
@@ -8,6 +8,21 @@ from frappe import _
 from collections import defaultdict
 
 class OvertimeCalculation(Document):
+    def get_selected_components(self):
+        settings = frappe.get_single("HR and Payroll Settings")
+        components = []
+        for row in settings.overtiem_salary_component:
+            if row.component_value:
+                components.append(row.component_value)
+        if not components:
+            frappe.throw(_("No Salary Components Selected in HR Settings"))
+        return components
+
+    def get_overtime_percentage(self):
+        settings = frappe.get_single("HR and Payroll Settings")
+        percentage = settings.overtime_percentage or 0
+        return percentage
+
     @frappe.whitelist()
     def get_overtime(self):
         self.set("overtime_details", [])
@@ -25,68 +40,63 @@ class OvertimeCalculation(Document):
         ]
         if not overtime_ids:
             frappe.throw(_("Please select at least one Overtime Entry"))
-        data = frappe.db.sql("""
-        SELECT
-            oe.name AS overtime_id,
-            oe.date,
-            oe.supervisor,
-            oe.supervisor_name,
-            oed.employee_id,
-            oed.employee_name,
-            oed.overtime_hrs,
-            emp.custom_overtime_percentage,
-            epd.basic,
-            epd.hra,
-            epd.lta,
-            epd.ca,
-            epd.medical_allowance,
-            epd.fda,
-            epd.bonus,
-            epd.da,
-            epd.overtime_ot,
-            epd.leave_encashment,
-            epd.washing_allowance
-        FROM `tabOvertime Entry` oe
-        INNER JOIN `tabOvertime Entry Details` oed
-            ON oe.name = oed.parent
-        LEFT JOIN `tabEmployee` emp
-            ON emp.name = oed.employee_id
-        LEFT JOIN `tabEmployee Payroll Details` epd
-            ON epd.parent = oed.employee_id
-            AND epd.from_date = (
-                SELECT from_date FROM `tabEmployee Payroll Details`
-                WHERE parent = oed.employee_id
-                ORDER BY
-                    CASE
-                        WHEN from_date <= %(from_date)s THEN 0
-                        ELSE 1
-                    END,
-                    from_date DESC
-                LIMIT 1
-            )
-        WHERE oe.name IN %(overtime_ids)s
-    """, {
-        "overtime_ids": tuple(overtime_ids),
-        "from_date": from_date
-    }, as_dict=True)
+        components = self.get_selected_components()
+        overtime_percentage = self.get_overtime_percentage()
+        salary_fields_sql = ", ".join(
+            [f"epd.{c}" for c in components]
+        )
+        query = f"""
+            SELECT
+                oe.name AS overtime_id,
+                oe.date,
+                oe.supervisor,
+                oe.supervisor_name,
+                oed.employee_id,
+                oed.employee_name,
+                oed.overtime_hrs,
+                emp.custom_is_overtime_applicable,
+                {salary_fields_sql}
+            FROM `tabOvertime Entry` oe
+            INNER JOIN `tabOvertime Entry Details` oed
+                ON oe.name = oed.parent
+            LEFT JOIN `tabEmployee` emp
+                ON emp.name = oed.employee_id
+            LEFT JOIN `tabEmployee Payroll Details` epd
+                ON epd.parent = oed.employee_id
+                AND epd.from_date = (
+                    SELECT from_date
+                    FROM `tabEmployee Payroll Details`
+                    WHERE parent = oed.employee_id
+                    ORDER BY
+                        (from_date <= oe.date) DESC,
+                        from_date DESC
+                    LIMIT 1
+                )
+            WHERE oe.name IN %(overtime_ids)s
+        """
+        data = frappe.db.sql(
+            query,
+            {
+                "overtime_ids": tuple(overtime_ids)
+            },
+            as_dict=True
+        )
         if not data:
             frappe.msgprint(_("No overtime data found"))
             return
         for row in data:
-            total_salary = self.get_total_salary(row)
+            total_salary = self.get_total_salary(row, components)
             hourly_rate = (
                 (total_salary / num_days) / 8
                 if num_days > 0 else 0
             )
             final_rate = hourly_rate
             if row.custom_is_overtime_applicable == 1:
-                percentage = row.custom_overtime_percentage or 0
-                if percentage <= 0:
+                if overtime_percentage <= 0:
                     frappe.throw(
-                        _("Overtime Percentage not set for Employee {0}")
-                        .format(row.employee_name)
+                        _("Overtime Percentage not set in HR Settings")
                     )
-                final_rate = hourly_rate * (percentage / 100)
+                final_rate = hourly_rate * overtime_percentage
             self.append("overtime_details", {
                 "overtime_id": row.overtime_id,
                 "supervisor_name": row.supervisor_name,
@@ -99,14 +109,17 @@ class OvertimeCalculation(Document):
                 "total_amount": final_rate * row.overtime_hrs
             })
         self.get_employee_sum()
-    def get_total_salary(self, row):
-        salary_fields = [
-            "basic", "hra", "lta", "ca",
-            "medical_allowance", "fda",
-            "bonus", "da", "overtime_ot",
-            "leave_encashment", "washing_allowance"
-        ]
-        return sum((row.get(f) or 0) for f in salary_fields)
+
+    def get_total_salary(self, row, components):
+        total = 0
+        for field in components:
+            if field not in row:
+                frappe.throw(
+                    _("Invalid salary field in HR Settings: {0}").format(field)
+                )
+            total += (row.get(field) or 0)
+        return total
+
     def get_employee_sum(self):
         summary = defaultdict(lambda: {
             "employee_name": "",
@@ -122,6 +135,7 @@ class OvertimeCalculation(Document):
             emp["overtime_rate"] = row.overtime_rate
             emp["overtime_hrs"] += row.overtime_hrs
             emp["total_amount"] += row.total_amount
+
         for emp in summary.values():
             self.append("overtime_hours_calculation", {
                 "employee_name": emp["employee_name"],

@@ -9,6 +9,7 @@
   "column_break_prns",
   "public_holiday_list",
   "section_break_mlkm",
+  "overtime_percentage",
   "overtiem_salary_component"
  ],
  "fields": [
@@ -35,15 +36,21 @@
   {
    "fieldname": "overtiem_salary_component",
    "fieldtype": "Table",
-   "label": "Overtiem Salary Component",
+   "label": "Overtime Salary Component",
    "options": "Overtime Salary Component"
+  },
+  {
+   "fieldname": "overtime_percentage",
+   "fieldtype": "Float",
+   "label": "Overtime Percentage",
+   "precision": "2"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-03 14:30:51.321681",
+ "modified": "2026-02-03 17:10:18.730743",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "HR and Payroll Settings",
