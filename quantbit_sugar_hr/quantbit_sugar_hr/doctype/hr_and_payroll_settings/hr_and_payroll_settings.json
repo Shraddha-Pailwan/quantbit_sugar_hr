@@ -7,7 +7,9 @@
  "field_order": [
   "off_season_holiday_day",
   "column_break_prns",
-  "public_holiday_list"
+  "public_holiday_list",
+  "section_break_mlkm",
+  "overtiem_salary_component"
  ],
  "fields": [
   {
@@ -25,13 +27,23 @@
    "fieldtype": "Link",
    "label": "Public Holiday List",
    "options": "Holiday List"
+  },
+  {
+   "fieldname": "section_break_mlkm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "overtiem_salary_component",
+   "fieldtype": "Table",
+   "label": "Overtiem Salary Component",
+   "options": "Overtime Salary Component"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-02 09:56:59.462760",
+ "modified": "2026-02-03 14:30:51.321681",
  "modified_by": "Administrator",
  "module": "Quantbit Sugar HR",
  "name": "HR and Payroll Settings",

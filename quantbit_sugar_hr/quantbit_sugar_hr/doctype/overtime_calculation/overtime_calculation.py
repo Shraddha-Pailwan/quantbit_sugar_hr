@@ -79,7 +79,7 @@ class OvertimeCalculation(Document):
                 if num_days > 0 else 0
             )
             final_rate = hourly_rate
-            if row.custom_overtime_based_on == "Percentage Wise":
+            if row.custom_is_overtime_applicable == 1:
                 percentage = row.custom_overtime_percentage or 0
                 if percentage <= 0:
                     frappe.throw(
@@ -87,8 +87,6 @@ class OvertimeCalculation(Document):
                         .format(row.employee_name)
                     )
                 final_rate = hourly_rate * (percentage / 100)
-            elif row.custom_overtime_based_on == "Salary Rate Wise":
-                final_rate = hourly_rate
             self.append("overtime_details", {
                 "overtime_id": row.overtime_id,
                 "supervisor_name": row.supervisor_name,
